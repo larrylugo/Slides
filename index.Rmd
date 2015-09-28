@@ -29,30 +29,25 @@ For those reasons, thanks to this application you can:
 ### Using the App
 
 
-It's very easy! See the app online [here](https://larrylugo.shinyapps.io/DevDataProdProjectFinal). Please choose a data set between __Crops__ or __Photosynthesis__. Then on side menu, select the **Dependent** and **Independent Variable**. Go to **Main Menu** (See Fig. 01 below) to analyze the information of your interest.
-
-![Fig. 1](./assets/img/fig01.png)
-
-* Data. Shows raw data. You can specify how many rows want to see.
-* Summary Statistics. Displays dependent and independent variables percentiles.
-* Histograms. This tab shows selected variables' histograms. You can decide "Number of bins" to be displayed.
-* Scatter Plot. Plot the relationship between variables.
-* Correlations. The whole correlation matrix is showed.
-* Model. Summarizes the model output.
-* Residuals. Plots residuals and Normal Q-Q test output.
-* Help: App's help document.
+It's very easy! See the app online [here](https://larrylugo.shinyapps.io/DevDataProdProjectFinal). On Side Menu choose a data set, Dependent and Independent Variable:</br>
+<div style='text-align: center;'>
+    <img height='220' width='200' src='./assets/img/fig02.png'/>
+</div></br>
+Then On Main Menu, see output on each corresponding Tab:</br></br>
+<div style='text-align: center;'>
+    <img height='144' width='609' src='./assets/img/fig01.png'/>
+</div>
 
 ---
 
 ### A Plotting Example
 
-```{r}
-library(ggplot2)
-```
-
-```{r, echo=TRUE}
+```{r, echo=TRUE, fig.width=7, fig.height=5, fig.align='center'}
+library(car)
 photo <- read.csv(file="./assets/data/Leaf_Photosynthesis_Traits.csv", header=TRUE, sep=",")
-ggplot(photo, aes(x=Vcmax_reported, y=Irradiance, group=Species, color=Species, height=3, width=3)) + geom_point() + xlab("weight") + ggtitle("Figure 01. Scatter Plot of Vcmax Reported vs. Irradiance by Species")
+scatterplot(Vcmax_reported ~ Irradiance, data=photo, 
+   xlab="Irradiance", ylab="Vcmax Reported", 
+   main="Vcmax Reported vs. Irradiance")
 ```  
 
 ---

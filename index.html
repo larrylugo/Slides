@@ -67,20 +67,15 @@
     <h3>Using the App</h3>
   </hgroup>
   <article data-timings="">
-    <p>It&#39;s very easy! See the app online <a href="https://larrylugo.shinyapps.io/DevDataProdProjectFinal">here</a>. Please choose a data set between <strong>Crops</strong> or <strong>Photosynthesis</strong>. Then on side menu, select the <strong>Dependent</strong> and <strong>Independent Variable</strong>. Go to <strong>Main Menu</strong> (See Fig. 01 below) to analyze the information of your interest.</p>
+    <p>It&#39;s very easy! See the app online <a href="https://larrylugo.shinyapps.io/DevDataProdProjectFinal">here</a>. On Side Menu choose a data set, Dependent and Independent Variable:</br></p>
 
-<p><img src="./assets/img/fig01.png" alt="Fig. 1"></p>
-
-<ul>
-<li>Data. Shows raw data. You can specify how many rows want to see.</li>
-<li>Summary Statistics. Displays dependent and independent variables percentiles.</li>
-<li>Histograms. This tab shows selected variables&#39; histograms. You can decide &quot;Number of bins&quot; to be displayed.</li>
-<li>Scatter Plot. Plot the relationship between variables.</li>
-<li>Correlations. The whole correlation matrix is showed.</li>
-<li>Model. Summarizes the model output.</li>
-<li>Residuals. Plots residuals and Normal Q-Q test output.</li>
-<li>Help: App&#39;s help document.</li>
-</ul>
+<div style='text-align: center;'>
+    <img height='220' width='200' src='./assets/img/fig02.png'/>
+</div></br>
+Then On Main Menu, see output on each corresponding Tab:</br></br>
+<div style='text-align: center;'>
+    <img height='144' width='609' src='./assets/img/fig01.png'/>
+</div>
 
   </article>
   <!-- Presenter Notes -->
@@ -91,14 +86,14 @@
     <h3>A Plotting Example</h3>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">library(ggplot2)
+    <pre><code class="r">library(car)
+photo &lt;- read.csv(file=&quot;./assets/data/Leaf_Photosynthesis_Traits.csv&quot;, header=TRUE, sep=&quot;,&quot;)
+scatterplot(Vcmax_reported ~ Irradiance, data=photo, 
+   xlab=&quot;Irradiance&quot;, ylab=&quot;Vcmax Reported&quot;, 
+   main=&quot;Vcmax Reported vs. Irradiance&quot;)
 </code></pre>
 
-<pre><code class="r">photo &lt;- read.csv(file=&quot;./assets/data/Leaf_Photosynthesis_Traits.csv&quot;, header=TRUE, sep=&quot;,&quot;)
-ggplot(photo, aes(x=Vcmax_reported, y=Irradiance, group=Species, color=Species, height=3, width=3)) + geom_point() + xlab(&quot;weight&quot;) + ggtitle(&quot;Figure 01. Scatter Plot of Vcmax Reported vs. Irradiance by Species&quot;)
-</code></pre>
-
-<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+<p><img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
 
   </article>
   <!-- Presenter Notes -->
