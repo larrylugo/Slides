@@ -8,7 +8,7 @@ This repository was the output of Slidify package and contains a presentation of
 
 * Directly Online
 
-Use four favorite browser and go to: https://rawgit.com/larrylugo/Slides/master/index.html#1
+Use your favorite browser and go to: https://rawgit.com/larrylugo/Slides/master/index.html#1 or http://larrylugo.github.io
 
 * Locally on your computer
 
